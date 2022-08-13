@@ -22,11 +22,11 @@ def process_exists(process_name):
     return last_line.lower().startswith(process_name.lower())
 
 def tasked():
-    anu = subprocess.Popen(["C:\\Users\\IEUser\\Desktop\\nginstrumen\\agentd\\lihat.exe", "/AcceptEula", "/BackingFile", "C:\\Users\\IEUser\\Desktop\\nginstrumen\\agentd\\logbit.pml", "/LoadConfig", "C:\\Users\\IEUser\\Desktop\\nginstrumen\\agentd\\locknot.pmc", "/Quiet"] )
+    anu = subprocess.Popen(["C:\\Users\\IEUser\\Desktop\\nginstrumen-guest\\lihat.exe", "/AcceptEula", "/BackingFile", "C:\\Users\\IEUser\\Desktop\\nginstrumen-guest\\logbit.pml", "/LoadConfig", "C:\\Users\\IEUser\\Desktop\\nginstrumen-guest\\locknot.pmc", "/Quiet"] )
     print(anu)
 
     time.sleep(5)
-    ransomed = subprocess.Popen(["C:\\Users\\IEUser\\Desktop\\nginstrumen\\agentd\\LOCKBITv2.exe"] )
+    ransomed = subprocess.Popen(["C:\\Users\\IEUser\\Desktop\\nginstrumen-guest\\LOCKBITv2.exe"] )
     # ransomed = subprocess.Popen(["C:\\Windows\\System32\\notepad.exe"] )
 
     still_ransom = True
@@ -36,9 +36,9 @@ def tasked():
             print("The ransomware process is still running...")
         else:
             print("Ransomware process has been stopped. Terminating ProcMon now...")
-            killed = subprocess.Popen(["C:\\Users\\IEUser\\Desktop\\nginstrumen\\agentd\\lihat.exe", "/Terminate"] )
+            killed = subprocess.Popen(["C:\\Users\\IEUser\\Desktop\\nginstrumen-guest\\lihat.exe", "/Terminate"] )
 
-            files = {'fileku': open('locknot.pmc', 'rb'),}
+            files = {'fileku': open('logbit.pml', 'rb'),}
             response = requests.post('http://192.168.56.1:9090/receive-file', files=files)
 
             still_ransom = False
